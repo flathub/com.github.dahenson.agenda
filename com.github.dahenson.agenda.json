@@ -63,8 +63,8 @@
 			"sources": [
 				{
 					"type":"archive",
-					"url": "https://github.com/elementary/granite/archive/0.4.1.tar.gz",
-					"sha256": "035a9b36ef73352ff8a76be06b876d9e2ea6633abb693fb67297d998c8d3a240"
+					"url": "https://github.com/elementary/granite/archive/0.5.tar.gz",
+					"sha256": "cc4905ae70fddeba3d2ded44bb642be77d419aa090251a7ab24c155b8616be06"
 				}
 			]
 		},
@@ -74,16 +74,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://github.com/dahenson/agenda/archive/1.0.8.tar.gz",
-					"sha256": "400abe4d9d3cf6f0c7517ba038f66e1eded52b64dd1a0e59a8caac5482e7b052"
-				},
-				{
-					"type": "patch",
-					"path": "list-remove.patch"
-				},
-				{
-					"type": "patch",
-					"path": "theming.patch"
+					"url": "https://github.com/dahenson/agenda/archive/1.0.9.tar.gz",
+					"sha256": "daba8f26053f8835faadc29fc1e115e1e8466b44f21798f15bdc1e34e45ed5de"
 				}
 			]
 		}
