@@ -8,6 +8,7 @@
 		/* Wayland and X11 access */
 		"--socket=wayland",
 		"--socket=x11",
+		"--share=ipc",
 		/* dconf */
 		"--filesystem=xdg-run/dconf",
 		"--filesystem=xdg-config/dconf:ro",
