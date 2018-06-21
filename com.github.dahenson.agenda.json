@@ -1,8 +1,9 @@
 {
 	"app-id": "com.github.dahenson.agenda",
-	"runtime": "org.gnome.Platform",
-	"runtime-version": "3.24",
-	"sdk": "org.gnome.Sdk",
+ 	"base": "io.elementary.Loki.BaseApp",
+    	"runtime": "org.freedesktop.Platform",
+    	"sdk": "org.freedesktop.Sdk",
+	"runtime-version": "1.6",
 	"command": "com.github.dahenson.agenda",
 	"finish-args": [
 		/* Wayland and X11 access */
@@ -19,56 +20,7 @@
 		"cflags": "-O2",
 		"cxxflags": "-O2"
 	},
-	"cleanup": [
-		"/bin/granite-demo",
-		"/share/applications/granite-demo.desktop",
-		"/include",
-		"/lib/pkgconfig",
-		"/lib/debug",
-		"/share/vala",
-		"/man",
-		"*.a",
-		"*.la"
-	],
 	"modules": [
-		{
-			"name": "libgee",
-			"build-options": {
-				"env": {
-					"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
-					"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
-				}
-			},
-			"sources": [
-				{
-					"type":"archive",
-					"url": "https://github.com/GNOME/libgee/archive/0.20.0.tar.gz",
-					"sha256": "42fe6d651910cb8b720167f71c5255a1b7b1afc82fecd3f31e61f9602b3b1335"
-				}
-			]
-		},
-		{
-			"name": "granite",
-			"buildsystem": "cmake",
-			"config-opts": [
-				"-DCMAKE_BUILD_TYPE=Release",
-				"-DCMAKE_INSTALL_PREFIX=/app",
-				"-DCMAKE_INSTALL_LIBDIR=/app/lib"
-			],
-			"build-options": {
-				"env": {
-					"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
-					"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
-				}
-			},
-			"sources": [
-				{
-					"type":"archive",
-					"url": "https://github.com/elementary/granite/archive/0.5.tar.gz",
-					"sha256": "cc4905ae70fddeba3d2ded44bb642be77d419aa090251a7ab24c155b8616be06"
-				}
-			]
-		},
 		{
 			"name": "agenda",
 			"buildsystem": "cmake",
