@@ -1,0 +1,25 @@
+From c88ab62f5cafe3b143bc2ec0a893ab11a8296214 Mon Sep 17 00:00:00 2001
+From: Alexander Wilms <Alexander-Wilms@users.noreply.github.com>
+Date: Fri, 12 Oct 2018 18:06:41 +0200
+Subject: [PATCH 1/1] Patch theme
+
+---
+ src/Agenda.vala | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/Agenda.vala b/src/Agenda.vala
+index 99e0ce9..356758b 100644
+--- a/src/Agenda.vala
++++ b/src/Agenda.vala
+@@ -42,6 +42,8 @@ namespace Agenda {
+             }
+ 
+             window = new AgendaWindow ();
++            Gtk.Settings.get_default().set_property("gtk-theme-name", "elementary");
++            Gtk.Settings.get_default().set_property("gtk-icon-theme-name", "elementary");
+             window.set_application (this);
+             window.delete_event.connect(window.main_quit);
+             window.show_all ();
+-- 
+2.19.1
+

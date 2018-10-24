@@ -1,13 +1,14 @@
 {
 	"app-id": "com.github.dahenson.agenda",
- 	"base": "io.elementary.Loki.BaseApp",
-    	"runtime": "org.freedesktop.Platform",
-    	"sdk": "org.freedesktop.Sdk",
-	"runtime-version": "1.6",
+	"base": "io.elementary.BaseApp",
+	"base-version": "juno",
+	"runtime": "org.freedesktop.Platform",
+	"sdk": "org.freedesktop.Sdk",
+	"runtime-version": "18.08",
 	"command": "com.github.dahenson.agenda",
 	"finish-args": [
 		/* Wayland and X11 access */
-		"--socket=wayland",
+		/* "--socket=wayland", window decoration missing */
 		"--socket=x11",
 		"--share=ipc",
 		/* dconf */
@@ -16,10 +17,12 @@
 		"--talk-name=ca.desrt.dconf",
 		"--env=DCONF_USER_CONFIG_DIR=.config/dconf"
 	],
-	"build-options": {
-		"cflags": "-O2",
-		"cxxflags": "-O2"
-	},
+	"cleanup": [
+		"/include",
+		"/lib/pkgconfig",
+		"*.a",
+		"*.la"
+	],
 	"modules": [
 		{
 			"name": "agenda",
@@ -27,8 +30,12 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://github.com/dahenson/agenda/archive/1.0.9.tar.gz",
-					"sha256": "daba8f26053f8835faadc29fc1e115e1e8466b44f21798f15bdc1e34e45ed5de"
+					"url": "https://github.com/dahenson/agenda/archive/1.0.12.tar.gz",
+					"sha256": "bbeae624f967d6d0d576f2f38ed9ca48b38763dfe7343b45929d5682b247ae54"
+				},
+				{
+					"type": "patch",
+					"path": "patch-theme.patch"
 				}
 			]
 		}
