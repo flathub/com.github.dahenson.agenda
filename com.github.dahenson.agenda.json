@@ -1,10 +1,10 @@
 {
 	"app-id": "com.github.dahenson.agenda",
 	"base": "io.elementary.BaseApp",
-	"base-version": "juno-21.08",
+	"base-version": "juno-23.08",
 	"runtime": "org.freedesktop.Platform",
 	"sdk": "org.freedesktop.Sdk",
-	"runtime-version": "21.08",
+	"runtime-version": "23.08",
 	"command": "com.github.dahenson.agenda",
 	"finish-args": [
 		/* Wayland and X11 access */
