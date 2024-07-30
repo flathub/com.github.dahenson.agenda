@@ -1,0 +1,78 @@
+From 08b852cb9cf528891e72b9bea3410dc38f315d83 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Tue, 30 Jul 2024 13:24:35 +0300
+Subject: [PATCH] Fix appdata papercuts
+
+- Add missing launchable tag
+- Use https for homepage URL
+- Add vcs-browser URL to show the source code repository
+- Add translate URL to show the translation repository
+- Remove the none oars ratings
+---
+ data/com.github.dahenson.agenda.appdata.xml.in | 37 ++++++-------------------------------
+ 1 file changed, 6 insertions(+), 31 deletions(-)
+
+diff --git a/data/com.github.dahenson.agenda.appdata.xml.in b/data/com.github.dahenson.agenda.appdata.xml.in
+index 092d3bd..04517fd 100644
+--- a/data/com.github.dahenson.agenda.appdata.xml.in
++++ b/data/com.github.dahenson.agenda.appdata.xml.in
+@@ -1,14 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!-- Copyright 2021 Dane Henson <thegreatdane@gmail.com>-->
+-<component type="desktop">
++<component type="desktop-application">
+   <id>com.github.dahenson.agenda</id>
+   <metadata_license>CC0</metadata_license>
+   <project_license>GPL-3.0+</project_license>
+   <name>Agenda</name>
+   <summary>Get things done</summary>
+   <developer_name>Dane Henson</developer_name>
+-  <url type="homepage">http://brainofdane.com</url>
++  <launchable type="desktop-id">com.github.dahenson.agenda.desktop</launchable>
++  <url type="homepage">https://brainofdane.com</url>
+   <url type="bugtracker">https://github.com/dahenson/agenda/issues</url>
++  <url type="vcs-browser">https://github.com/dahenson/agenda</url>
++  <url type="translate">https://github.com/dahenson/agenda/tree/master/po</url>
+   <screenshots>
+     <screenshot type="default">
+       <image>https://raw.githubusercontent.com/dahenson/agenda/master/data/screenshot.png</image>
+@@ -96,35 +99,7 @@
+       </description>
+     </release>
+   </releases>
+-  <content_rating type="oars-1.1">
+-    <content_attribute id="violence-cartoon">none</content_attribute>
+-    <content_attribute id="violence-fantasy">none</content_attribute>
+-    <content_attribute id="violence-realistic">none</content_attribute>
+-    <content_attribute id="violence-bloodshed">none</content_attribute>
+-    <content_attribute id="violence-sexual">none</content_attribute>
+-    <content_attribute id="violence-desecration">none</content_attribute>
+-    <content_attribute id="violence-slavery">none</content_attribute>
+-    <content_attribute id="violence-worship">none</content_attribute>
+-    <content_attribute id="drugs-alcohol">none</content_attribute>
+-    <content_attribute id="drugs-narcotics">none</content_attribute>
+-    <content_attribute id="drugs-tobacco">none</content_attribute>
+-    <content_attribute id="sex-nudity">none</content_attribute>
+-    <content_attribute id="sex-themes">none</content_attribute>
+-    <content_attribute id="sex-homosexuality">none</content_attribute>
+-    <content_attribute id="sex-prostitution">none</content_attribute>
+-    <content_attribute id="sex-adultery">none</content_attribute>
+-    <content_attribute id="sex-appearance">none</content_attribute>
+-    <content_attribute id="language-profanity">none</content_attribute>
+-    <content_attribute id="language-humor">none</content_attribute>
+-    <content_attribute id="language-discrimination">none</content_attribute>
+-    <content_attribute id="social-chat">none</content_attribute>
+-    <content_attribute id="social-info">none</content_attribute>
+-    <content_attribute id="social-audio">none</content_attribute>
+-    <content_attribute id="social-location">none</content_attribute>
+-    <content_attribute id="social-contacts">none</content_attribute>
+-    <content_attribute id="money-purchasing">none</content_attribute>
+-    <content_attribute id="money-gambling">none</content_attribute>
+-  </content_rating>
++  <content_rating type="oars-1.1" />
+   <custom>
+     <value key="x-appcenter-suggested-price">3</value>
+     <value key="x-appcenter-stripe">pk_live_ABkBJVNQ8dmHcOYBGYqJFVTj</value>
+--
+libgit2 1.7.2
+
