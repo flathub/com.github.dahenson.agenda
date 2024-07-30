@@ -31,6 +31,10 @@
 			{
 				"type": "patch",
 				"path": "patch-theme.patch"
+			},
+			{
+				"type": "patch",
+				"path": "fix-appdata.patch"
 			}
 		]
 	}]
