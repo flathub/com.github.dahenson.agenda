@@ -8,8 +8,8 @@
 	"command": "com.github.dahenson.agenda",
 	"finish-args": [
 		/* Wayland and X11 access */
-		/* "--socket=wayland", window decoration missing */
-		"--socket=x11",
+		"--socket=wayland",
+		"--socket=fallback-x11",
 		"--share=ipc",
 		"--metadata=X-DConf=migrate-path=/com/github/dahenson/agenda/"
 
