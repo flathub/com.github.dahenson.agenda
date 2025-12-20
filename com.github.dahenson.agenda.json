@@ -1,10 +1,17 @@
 {
 	"app-id": "com.github.dahenson.agenda",
-	"base": "io.elementary.BaseApp",
-	"base-version": "juno-23.08",
 	"runtime": "org.freedesktop.Platform",
+	"runtime-version": "24.08",
+	"base": "io.elementary.BaseApp",
+	"base-version": "circe-24.08",
 	"sdk": "org.freedesktop.Sdk",
-	"runtime-version": "23.08",
+	"sdk-extensions": [
+			"org.freedesktop.Sdk.Extension.vala"
+	],
+	"build-options": {
+			"prepend-path": "/usr/lib/sdk/vala/bin/",
+			"prepend-ld-library-path": "/usr/lib/sdk/vala/lib"
+	},
 	"command": "com.github.dahenson.agenda",
 	"finish-args": [
 		/* Wayland and X11 access */
@@ -12,7 +19,6 @@
 		"--socket=fallback-x11",
 		"--share=ipc",
 		"--metadata=X-DConf=migrate-path=/com/github/dahenson/agenda/"
-
 	],
 	"cleanup": [
 		"/include",
@@ -20,7 +26,22 @@
 		"*.a",
 		"*.la"
 	],
-	"modules": [{
+	"modules": [
+		{
+			"name": "libgee",
+			"make-install-args": [
+				"girdir=/app/share/gir-1.0",
+				"typelibdir=/app/lib/girepository-1.0"
+			],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.8.tar.xz",
+					"sha256": "189815ac143d89867193b0c52b7dc31f3aa108a15f04d6b5dca2b6adfad0b0ee"
+				}
+			]
+		},
+		{
 		"name": "agenda",
 		"buildsystem": "meson",
 		"sources": [{
