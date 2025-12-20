@@ -46,8 +46,8 @@
 		"buildsystem": "meson",
 		"sources": [{
 				"type": "archive",
-				"url": "https://github.com/dahenson/agenda/archive/refs/tags/1.1.2.tar.gz",
-				"sha256": "9ccf728661d28c15001c0a9c1db4d9047f7689273c7c100bd36a03bede6a6fd2"
+				"url": "https://github.com/dahenson/agenda/archive/refs/tags/1.2.1.tar.gz",
+				"sha256": "55e81dfd60a2fb85285a510d2cda1984b6a7d7bd15816c71e7326f0cd6bdb5bd"
 			},
 			{
 				"type": "patch",
