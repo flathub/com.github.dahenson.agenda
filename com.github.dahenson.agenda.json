@@ -29,10 +29,6 @@
 	"modules": [
 		{
 			"name": "libgee",
-			"make-install-args": [
-				"girdir=/app/share/gir-1.0",
-				"typelibdir=/app/lib/girepository-1.0"
-			],
 			"sources": [
 				{
 					"type": "archive",
@@ -51,11 +47,10 @@
 			},
 			{
 				"type": "patch",
-				"path": "patch-theme.patch"
-			},
-			{
-				"type": "patch",
-				"path": "fix-appdata.patch"
+				"paths": [
+					"patch-theme.patch",
+					"fix-appdata.patch"
+				]
 			}
 			],
 			"post-install" : [
